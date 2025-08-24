@@ -6,21 +6,13 @@
 NietteTTS Documentação
 ==========================================
 
-Documentação do NietteTTS, como instalação com suporte ao Speech Dispatcher, amostras de áudio das vozes do projeto NietteTTS.
-
-Informações sobre o NietteTTS
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. toctree::
-   :maxdepth: 1
-
-   niettetts
-
 Manual
 ^^^^^^
 .. toctree::
    :maxdepth: 1
 
-   instalacao
+   manual/instalacao/instalacao
+   manual/instalacao/Speech_Dispatcher
 
 Idiomas Disponivéis
 ^^^^^^^^^^^^^^^^^^^
@@ -28,6 +20,6 @@ Idiomas Disponivéis
 .. toctree::
    :maxdepth: 1
 
-   pt-br
+   lang/pt-br
 
 
