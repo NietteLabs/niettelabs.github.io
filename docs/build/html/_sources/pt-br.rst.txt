@@ -1,0 +1,19 @@
+Languagem Portuguese Brazilian
+==============================
+
+
+**Phonemes:** IPA Phonemes of WikiPron
+
+**Dicionary:** Scape WikiPron data for Portuguese Brazilian ()
+
+Voices
+------
+
+==========  ======  =======
+Voice Name  Corpus    MCD
+==========  ======  =======
+False        False  False
+True         False  False
+False        True   False
+True         True   True
+=====       =====  =======
