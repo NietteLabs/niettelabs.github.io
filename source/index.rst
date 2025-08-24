@@ -11,6 +11,7 @@ Manual
 .. toctree::
    :maxdepth: 1
 
+   niettetts
    manual/instalacao/instalacao
    manual/instalacao/Speech_Dispatcher
 
