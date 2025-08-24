@@ -6,6 +6,9 @@
 NietteTTS Documentação
 ==========================================
 
+Documentação do NietteTTS, como instalação com suporte ao Speech Dispatcher, amostras de áudio das vozes do projeto NietteTTS.
+
+
 Manual
 ^^^^^^
 .. toctree::
