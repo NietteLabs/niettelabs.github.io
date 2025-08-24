@@ -16,5 +16,5 @@ Extração de F0 usando REAPER, sendo melhor que o SPTK-3.6 usado por padrão pe
 Scripts para instalação de ferramentas, extração de MCEP, STR, F0 e treinamento de modelo g2p e vocal
 
 # Observações 
-- O NietteTTS está sendo desenvolvindo apenas por uma pessoa (Pallas13) sendo esse projeto para Trabalho de Conclusão de Curso (TCC) do Curso Técnico em Desenvolvimento de Sistemas devido ao tempo, falta de recursos comp>
+- O NietteTTS está sendo desenvolvindo apenas por uma pessoa (Pallas13) sendo esse projeto para Trabalho de Conclusão de Curso (TCC) do Curso Técnico em Desenvolvimento de Sistemas devido ao tempo, falta de recursos falta de recursos compurtacionais.
 - Para as vozes serem usadas no Speech Dispatcher é necessario seguir passo a passo de instalação. O funcionamento é instavél.
