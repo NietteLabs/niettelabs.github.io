@@ -1,17 +1,23 @@
 # Usar vozes do NietteTTS com Speech Dispatcher
 Fazer esse processo, permiter usar as vozes do NietteTTS forar do modo interativo do Festival, usando em aplicativos que usam o Speech Dispatcher como leitor de tela ou PDF's
 
-**Fonte:** 
-https://wiki.archlinux.org/title/Festival_(Portugu%C3%AAs)
+**Fontes:** 
 
-https://wiki.archlinux.org/title/Speech_dispatcher
+[Página do Festival na wiki.archlinux.org](https://wiki.archlinux.org/title/Festival_(Portugu%C3%AAs))
+
+[Página do Speech Dispatcher na wiki.archlinux.org](https://wiki.archlinux.org/title/Speech_dispatcher)
 
 ## Instalar as vozes no seu sistema (Baseado em Debian/Ubuntu)
 
-### Exemplo para usar voz Ana.
+### Exemplo para usar voz Paula.
 
 ```bash
-sudo apt-get install ./ana.deb speech-dispatcher-festival
+sudo apt-get install ./festival-pt-niettelabs-paula-cg.deb speech-dispatcher-festival
+```
+
+**Caso a voz desejada já foi instalada, digite apenas:**
+```bash
+sudo apt-get install speech-dispatcher-festival
 ```
 
 ## Instalar versão modificado do festival-freebsoft-utils

@@ -2,15 +2,15 @@
 
 Disponível apenas para sistema operativos (Debian/Ubuntu) ou que baseiam neles.
 
-# Download das vozes
+## Download das vozes
 
 Vai em [releases do NietteTTS](https://github.com/NietteLabs/NietteTTS/releases), na versão recente e baixe uma das vozes disponíveis em .deb.
 
-# Instalação da voz (Modo Gráfico)
+## Instalação da voz (Modo Gráfico)
 
 Após escolher e baixar o arquivo da voz, apenas clique duas vezes para abrir sua loja de apps e clique em instalar, após isso ocorrerá a solitação de senha para fazer instalação.
 
-# Instalação da voz (Modo Terminal)
+## Instalação da voz (Modo Terminal)
 
 Caso seu sistema não tiver um instalador .deb, é possivel fazer a instalação via terminal usado *apt*. 
 
@@ -28,7 +28,7 @@ sudo apt-get install ./Download/festival-pt-niettelabs-paula-cg.deb
 
 Após executar um desses comandos, é necessario digitar a senha para fazer a instalação (na maioria dos casos).
 
-# Usar as vozes no modo interativo (Festival)
+## Usar as vozes no modo interativo (Festival)
 
 **Para usar as vozes em modo interativo do Festival:**
 Para iniciar Festival em modo interativo
@@ -57,7 +57,7 @@ Para listar as vozes instaladas no Festival
 (SayText "Seu texto Aqui")
 ```
 
-# Observações
+## Observações
 Caso houver aspas simples (') ou duplas ("), é necéssario colocar \ nelas para Festival conseguir ler
 
 **Exemplo**

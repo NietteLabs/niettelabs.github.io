@@ -8,6 +8,7 @@ NietteTTS Documentação
 
 Manual
 ^^^^^^
+
 .. toctree::
    :maxdepth: 1
 
