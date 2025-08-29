@@ -5,7 +5,19 @@ Disponível apenas para sistema operativos (Debian/Ubuntu) ou que baseiam neles.
 ## Download das vozes
 
 Vai em [releases do NietteTTS](https://github.com/NietteLabs/NietteTTS/releases), na versão recente e baixe uma das vozes disponíveis em .deb.
+
 Vai em [releases do phonetisaurus-deb](https://github.com/NietteLabs/phonetisaurus-deb/releases/), na versão recente e baixe o pacote .deb da arquitetura da sua máquina.
+
+### Como saber arquitectura da minha máquina (notebook/computador/outros)
+Para saber sua arquitectura do sua máquina, basta digitar:
+```bash
+uname -m
+```
+| Saída do `uname -m`| arquitectura/arquivo |
+| ------------------ | ---------------------|
+| x86_64 | amd64.deb |
+| armv7l | armhf.deb |
+| aarch64 | arm64.deb |
 
 ## Instalação da voz (Modo Gráfico)
 
@@ -18,12 +30,12 @@ Caso seu sistema não tiver um instalador .deb gráfico, é possivel fazer a ins
 **Abrar seu terminal e digite o seguite comando:**
 
 ```bash
-sudo apt-get install ./arquivo_da_sua_arquitetura.deb
+sudo apt-get install ./arquivo_da_sua_arquitetura.deb ./voz.deb
 ```
 
-**Exemplo com amd64 (x86_64) está na pasta download:**
+**Exemplo com amd64 (x86_64) e Voz Paula está na pasta download:**
 ```bash
-sudo apt-get install ./Download/amd64.deb
+sudo apt-get install ./Download/amd64.deb ./Download/festival-pt-niettelabs-paula-cg.deb
 ```
 
 Após executar um desses comandos, é necessario digitar a senha para fazer a instalação (na maioria dos casos).
