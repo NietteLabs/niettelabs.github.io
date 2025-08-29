@@ -31,7 +31,7 @@ O treinamento foi feito usado todo os áudios do corpus do falante, sem divisão
 
 ```{admonition} Sobre MCD
 :class: tip
-MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudios gerados (sintetizados) com os áudios usando para treinamento de voz. 
+MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudios gerados (sintetizados) com os áudios usandos para treinamento da voz. 
 <br>
 **MCD <= 0 - Perfeito**;
 <br>
