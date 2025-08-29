@@ -3,11 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-NietteTTS Documentação
-==========================================
+Documentação do NietteTTS
+=========================
+Documentação do NietteTTS, software feito pela organização NietteLabs.
 
-Manual
-^^^^^^
+Manuais
+^^^^^^^
 
 .. toctree::
    :maxdepth: 1

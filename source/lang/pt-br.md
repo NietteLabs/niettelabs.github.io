@@ -16,13 +16,36 @@ Foi usando [REAPER](https://github.com/google/REAPER) para extração de F0 para
 
 ## Vozes
 
+```{admonition} Observação sobre o calculo de MCD
+:class: caution dropdown
+O treinamento foi feito usado todo os áudios do corpus do falante, sem divisão para avaliação, para o calculo de MCD foi usado 10% dos áudios.
+
+[Mais sobre o MCD](https://learnius.com/slp/9+Speech+Synthesis/1+Fundamental+Concepts/3+Evaluation/mel+cepstral+distortion+(MCD))
+```
+
 | Nome    | Corpus usando                                                    | Descrição                                                                                                                                                                                                                                                                                                                                                                                                             | MCD  |
 | ------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
 | Ana     | [CETUC](https://gitlab.com/fb-audio-corpora/alcaim16k-DVD1de4)   | O [Centro de Estudos em Telecomunicações (CETUC)](https://www.ctc.puc-rio.br/laboratorios-cetuc), através do Professor Doutor Abraham Alcaim, gentilmente cedeu ao LaPS, **para fins de pesquisa exclusivamente**, seu corpus de áudio para Português Brasileiro. Esse corpus, é composto por áudios de 1.000 sentenças, gravados por 101 locutores, totalizando aproximadamente 143 horas de áudio. Locutor ID: F050 | 3.80 |
 | Paula   | [CETUC](https://gitlab.com/fb-audio-corpora/alcaim16k-DVD1de4)   | O [Centro de Estudos em Telecomunicações (CETUC)](https://www.ctc.puc-rio.br/laboratorios-cetuc), através do Professor Doutor Abraham Alcaim, gentilmente cedeu ao LaPS, **para fins de pesquisa exclusivamente**, seu corpus de áudio para Português Brasileiro. Esse corpus, é composto por áudios de 1.000 sentenças, gravados por 101 locutores, totalizando aproximadamente 143 horas de áudio. Locutor ID: F000 | 3.90 |
 | Pieroni | [THLS](https://gitlab.com/lfelipesv/1000-sentences-thls-dataset) | Open Source Brazilian Portuguese Speech Dataset with 1000 sentences balanced phonetically. (Feito downgrade de 48hz para 44hz)                                                                                                                                                                                                                                                                                        | 3.72 |
 
-Ao treinar as vozes, não houver divisão entre (train/test). A medição referente a comparação de 10% dos audios do corpus com os mesmos audios gerados. MCD < é melhor.
+```{admonition} Sobre MCD
+:class: tip
+MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudios gerados (sintetizados) com os áudios usando para treinamento de voz. 
+<br>
+**MCD <= 0 - Perfeito**;
+<br>
+**MCD <= 1 - Muito bom**;
+<br>
+**MCD <= 2 - Bom**;
+<br>
+**MCD <= 3 - Médiano**;
+<br>
+**MCD <= 4 - Ruím**;
+<br>
+**MDD >= 5 - Muito Rúim**;
+```
+
 ## Amostras
 **Texto 1:** 
 

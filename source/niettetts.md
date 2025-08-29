@@ -1,5 +1,11 @@
 # O que é o projeto NietteTTS?
 
+```{admonition} Observações
+:class: dropdown
+NietteTTS, é um projeto para Trabalho de Conclusão de Curso (TCC) sendo desenvolvindo unicamente por uma pessoa. 
+No futuro o código-fonte do NietteTTS será organizada em conjuto com sua documentação para ser usado por outras pessoas para desenvolvimento do NietteTTS e ao suporte de novo idiomas.
+```
+
 NietteTTS é um MotorTTS que usar Festival Speech Synthesis System para sintése de fala em Português Brasileiro (futuro novos idiomas) para Festival contanto com vozes construida usando FestVoz usando a sintése fala usando HMM com adições de scrips e modificações para sintése de alta qualidade.
 
 ## Modificações/Qualidades do NietteTTS
@@ -15,6 +21,6 @@ Extração de F0 usando REAPER, sendo melhor que o SPTK-3.6 usado por padrão pe
 6. Script diversos:
 Scripts para instalação de ferramentas, extração de MCEP, STR, F0 e treinamento de modelo g2p e vocal
 
-## Observações 
-- O NietteTTS está sendo desenvolvindo apenas por uma pessoa (Pallas13) sendo esse projeto para Trabalho de Conclusão de Curso (TCC) do Curso Técnico em Desenvolvimento de Sistemas devido ao tempo, falta de recursos falta de recursos compurtacionais.
-- Para as vozes serem usadas no Speech Dispatcher é necessario seguir passo a passo de instalação. O funcionamento é instavél.
+## Logo
+Imagem usada no logo:
+<a href="https://www.flaticon.com/free-icons/speak" title="speak icons">Speak icons created by Voysla - Flaticon</a>

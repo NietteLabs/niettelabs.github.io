@@ -19,9 +19,8 @@ Caso seu sistema não tiver um instalador .deb, é possivel fazer a instalação
 ```bash
 sudo apt-get install ./(onde_sua_voz_deb_estar).deb
 ```
-
-**Exemplo voz Paula está baixada em Download:**
-
+### Exemplo 
+Voz Paula está baixada em Download:
 ```bash
 sudo apt-get install ./Download/festival-pt-niettelabs-paula-cg.deb
 ```
@@ -29,38 +28,40 @@ sudo apt-get install ./Download/festival-pt-niettelabs-paula-cg.deb
 Após executar um desses comandos, é necessario digitar a senha para fazer a instalação (na maioria dos casos).
 
 ## Usar as vozes no modo interativo (Festival)
-
-**Para usar as vozes em modo interativo do Festival:**
-Para iniciar Festival em modo interativo
+Para iniciar Festival em modo interativo:
 ```bash
 festival
 ```
 
-Para listar as vozes instaladas no Festival
-```lisp
+Para listar as vozes instaladas no Festival:
+```scheme
 (voice.list)
 ```
 
-**Quando aparacer sua voz instalada:**
-Para listar as vozes instaladas no Festival
-```lisp 
-(voice_nome_completo_voz_que_escolher)
+Selecionar voz:
+```scheme
+(voice_nome_completo_voz_que_escolheu)
 ```
 
-**Exemplo para voz Paula**
-```lisp
+### Exemplo
+Usar a voz Paula para sintetizar texto:
+```scheme
 (voice_niettelabs_pt_paula_cg) 
 ```
 
-**Fazer a voz falar**
-```lisp
+Sintetizar fala a partir um texto:
+```scheme
 (SayText "Seu texto Aqui")
 ```
 
-## Observações
-Caso houver aspas simples (') ou duplas ("), é necéssario colocar \ nelas para Festival conseguir ler
+```{admonition} Dica
+:class: tip
+Caso houver aspas simples (') ou duplas ("), é necéssario colocar \ nelas para Festival conseguir ler.
 
-**Exemplo**
-```lisp
+**Exemplo de texto com aspas duplas:**
+
+```scheme
 (SayText "O Livro \"Pequeno Manual Anti-Transfobia\" de Júlia Klee")
 ```
+
+
