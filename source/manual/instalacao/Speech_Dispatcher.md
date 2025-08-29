@@ -12,19 +12,12 @@ O funcionamento com Speech Dispatcher está em frase experimental, cuidado ao us
 
 [Página do Speech Dispatcher na wiki.archlinux.org](https://wiki.archlinux.org/title/Speech_dispatcher)
 
-## Instalar as vozes no seu sistema (Baseado em Debian/Ubuntu)
+## Downlaod da voz e do G2P
 
-### Download das vozes
+Siga ess tutorial de instalçao das vozes do NietteTTS em: [Instalação](https://niettelabs.github.io/manual/instalacao/instalacao.html)
 
-Vai em [releases do NietteTTS](https://github.com/NietteLabs/NietteTTS/releases), na versão recente e baixe uma das vozes disponíveis em .deb.
+### Instalar o módulo do Speech Dispatch Festival
 
-### Exemplo para usar voz Paula.
-
-```bash
-sudo apt-get install ./festival-pt-niettelabs-paula-cg.deb speech-dispatcher-festival
-```
-
-**Caso a voz desejada já foi instalada, digite apenas:**
 ```bash
 sudo apt-get install speech-dispatcher-festival
 ```
