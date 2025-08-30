@@ -6,8 +6,6 @@ NietteTTS, é um projeto para Trabalho de Conclusão de Curso (TCC) sendo desenv
 No futuro o código-fonte do NietteTTS será organizada em conjuto com sua documentação para ser usado por outras pessoas para desenvolvimento do NietteTTS e ao suporte de novo idiomas.
 ```
 
-NietteTTS é um MotorTTS que usar Festival Speech Synthesis System para sintése de fala em Português Brasileiro (futuro novos idiomas) para Festival contanto com vozes construida usando FestVoz usando a sintése fala usando HMM com adições de scrips e modificações para sintése de alta qualidade.
-
 NietteTTS é um MotorTTS (Text-To-Speech) que usar o software Festival Speech System para síntese de fala em Português Brasileiro (futuramente suporte a outros idiomas). Usasse o kit FestVoz para desenvolvimento das vozes com algumas modificações visando o melhorar a síntese.
 As vozes são desenvolvidas usando a técnica de síntese baseada em HMM baseada no motor de síntese HTS. 
 
