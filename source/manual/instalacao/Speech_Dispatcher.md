@@ -1,9 +1,9 @@
 # Usar vozes do NietteTTS com Speech Dispatcher
-Fazer esse processo, permiter usar as vozes do NietteTTS forar do modo interativo do Festival, usando em aplicativos que usam o Speech Dispatcher como leitor de tela ou PDF's
+Fazer esse processo, possibilitar usar as vozes do NietteTTS não em modo interativo do Festival, usando em aplicativos que usam o Speech Dispatcher como leitor de tela ou PDFs.
 
 ```{admonition} Aviso
 :class: caution
-O funcionamento com Speech Dispatcher está em frase experimental, cuidado ao usar as vozes do NietteTTS com Speech Dispatcher.
+O funcionamento com Speech Dispatcher está em fase experimental, cuidado ao usar as vozes do NietteTTS com Speech Dispatcher.
 ```
 
 **Fontes:** 
@@ -12,17 +12,17 @@ O funcionamento com Speech Dispatcher está em frase experimental, cuidado ao us
 
 [Página do Speech Dispatcher na wiki.archlinux.org](https://wiki.archlinux.org/title/Speech_dispatcher)
 
-## Downlaod da voz e do G2P
+## Download da voz e do G2P
 
-Siga ess tutorial de instalçao das vozes do NietteTTS em: [Instalação](https://niettelabs.github.io/manual/instalacao/instalacao.html)
+Siga esse tutorial de instalação das vozes do NietteTTS em: [Instalação](https://niettelabs.github.io/manual/instalacao/instalacao.html)
 
-### Instalar o módulo do Speech Dispatch Festival
+### Instale o módulo do Speech Dispatch Festival
 
 ```bash
 sudo apt-get install speech-dispatcher-festival
 ```
 
-### Instalar versão modificado do festival-freebsoft-utils
+### Instale a versão modificada do festival-freebsoft-utils
 
 ```bash
 git clone https://github.com/NietteLabs/festival-freebsoft-utils
@@ -31,7 +31,7 @@ sudo cp *.scm /usr/share/festival
 ```
 
 ## Para usar Festival com PulseAudio/Alsa
-Edite o arquvivo ```~/.festivalrc```
+Edite o arquivo ```~/.festivalrc```
 
 **PulseAudio:**
 ```scheme
@@ -46,9 +46,9 @@ Edite o arquvivo ```~/.festivalrc```
 (Parameter.set 'Audio_Command "aplay -q -c 1 -t raw -f s16 -r $SR $FILE")
 ```
 
-## Adicionar suporte ao Festival no Speech Dispatcher
+## Adicione suporte ao Festival no Speech Dispatcher
 
-## Abrar o seguinte arquivo de configurações:
+## Abra o seguinte arquivo de configurações:
 
 ```bash
 nano ~/.config/speech-dispatcher/speechd.conf

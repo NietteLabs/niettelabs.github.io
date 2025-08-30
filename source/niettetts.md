@@ -8,16 +8,17 @@ No futuro o código-fonte do NietteTTS será organizada em conjuto com sua docum
 
 NietteTTS é um MotorTTS que usar Festival Speech Synthesis System para sintése de fala em Português Brasileiro (futuro novos idiomas) para Festival contanto com vozes construida usando FestVoz usando a sintése fala usando HMM com adições de scrips e modificações para sintése de alta qualidade.
 
+NietteTTS é um MotorTTS (Text-To-Speech) que usar o software Festival Speech System para síntese de fala em Português Brasileiro (futuramente suporte a outros idiomas). Usasse o kit FestVoz para desenvolvimento das vozes com algumas modificações visando o melhorar a síntese.
+As vozes são desenvolvidas usando a técnica de síntese baseada em HMM baseada no motor de síntese HTS. 
+
 ## Modificações/Qualidades do NietteTTS
 
-1. Fonemas em formato IPA:
-Transcrições fóneticas de palavras retiradas da Wikipedia usando o projeto WikiPron, para obter atualidade e qualidade.
+1. Fonemas atualizadas: Transcrições usando projeto WikiPron, para obter confiabilidade e atualidade em termos de pronúncia das palavras. 
 2. G2P melhorado:
 Usando Phonetisaurus G2P para treinamento rápido e melhorado em comparação com LTS Rules (Árvore de Decisão) do Festival.
-3. Extração de F0 (Pitch EstimatoR) usando REAPER:
-Extração de F0 usando REAPER, sendo melhor que o SPTK-3.6 usado por padrão pelo projeto FestVox.
-4. Extração de MCEP usando SPTK-4.3 e modificações de paramentros para extração.
-5. Extração de STR usando SNACK (Baseando e usando script do MaryTTS).
+3. Extração de F0 (Pitch EstimatoR) usando REAPER: Trocando o uso do SPTK-3.6 para extração F0
+4. Extração de MCEP usando SPTK-4.3 com modificações de parâmetros para melhor extração.
+5. Extração de STR usando SNACK (Usando script do MaryTTS como base).
 6. Script diversos:
 Scripts para instalação de ferramentas, extração de MCEP, STR, F0 e treinamento de modelo g2p e vocal
 
