@@ -5,7 +5,8 @@ Fonemas: [Lista de Fonemas Usadas](https://github.com/CUNY-CL/wikipron/blob/mast
 
 Dicionario: [Dicionario](https://github.com/CUNY-CL/wikipron/blob/master/data/scrape/tsv/por_latn_bz_broad_filtered.tsv), fornecido pelo projeto WikiPron
 
-Foi usando [REAPER](https://github.com/google/REAPER) para extração de F0 para extração de MCEP [SPTK-4.3](https://github.com/sp-nitech/SPTK). Na extração de MCEP foram usado como base o artigo [*Simple Methods for Improving Speaker-Similarity of HMM-Based Speech Synthesis - Junichi Yamagishi, Simon King*](https://www.cstr.ed.ac.uk/downloads/publications/2010/JunichiICASSP10.pdf) para valores de MCEP Order e Alpha para melhor extração para as vozes de 16hz e 44hz . Script para extração de STR do MaryTTS foi usando para extração de STR das vozes.
+Foi usando [REAPER](https://github.com/google/REAPER) para extração de F0 para 
+Extração de MCEP [SPTK-4.3](https://github.com/sp-nitech/SPTK). Na extração de MCEP foram usados como base o artigo [*Simple Methods for Improving Speaker-Similarity of HMM-Based Speech Synthesis - Junichi Yamagishi, Simon King*](https://www.cstr.ed.ac.uk/downloads/publications/2010/JunichiICASSP10.pdf) para valores de MCEP Order e Alpha para melhor extração para as vozes de 16hz e 44hz. Script para extração de STR do MaryTTS foi usando para extração de STR das vozes.
 
 **Valores usados:**
 
@@ -67,11 +68,11 @@ MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudi
 > que tenta nos anular, nos silenciar, nos apagar do mundo.<br>
 > ***[Pequeno Manual Anti-Transfobia - Por Júlia Klee](https://loja.uiclap.com/titulo/ua99785/)***
 
-| Voz     | Audio                                                                                                                                                     |
-| ------- | --------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ana     | <audio controls><br><source src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/ana/livro.wav" type="audio/wave"><br></audio>     |
-| Paula   | <audio controls><br><source src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/paula/livro.wav" type="audio/wave"><br></audio>   |
-| Pieroni | <audio controls><br><source src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/pieroni/livro.wav" type="audio/wave"><br></audio> |
+| Voz     | Audio                                                                                                                                     |
+| ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
+| Ana     | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/ana/livro.wav"></audio>                       |
+| Paula   | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/paula/livro.wav"></audio>                     |
+| Pieroni | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/pieroni/livro.wav"></audio> |
 
 
 **Texto 2:**
@@ -115,11 +116,11 @@ MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudi
 > Me diga, então, como vai sofrer<br>
 > ***Eu Sem Você (Por Que Te Vás) - Lílian***
 
-| Voz     | Audio                                                                                                                                                      |
-| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ana     | <audio controls><br><source src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/ana/musica.wav" type="audio/wave"><br></audio>     |
-| Paula   | <audio controls><br><source src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/paula/musica.wav" type="audio/wave"><br></audio>   |
-| Pieroni | <audio controls><br><source src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/pieroni/musica.wav" type="audio/wave"><br></audio> |
+| Voz     | Audio                                                                                                                                    |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
+| Ana     | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/ana/musica.wav"></audio>     |
+| Paula   | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/paula/musica.wav"></audio>   |
+| Pieroni | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/pieroni/musica.wav"></audio> |
 
 **Texto 3:**
 > Eu sempre penso em ti.<br>
@@ -153,8 +154,8 @@ MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudi
 > Eu te amor do fundo do meu coração.<br>
 > ***Texto feito pela Pallas para sua amada Niette***
 
-| Voz     | Audio                                                                                                                                                                    |
-| ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
-| Ana     | <audio controls><br><source src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/ana/amor_niette_05-11-24.wav" type="audio/wave"><br></audio>     |
-| Paula   | <audio controls><br><source src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/paula/amor_niette_05-11-24.wav" type="audio/wave"><br></audio>   |
-| Pieroni | <audio controls><br><source src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/pieroni/amor_niette_05-11-24.wav" type="audio/wave"><br></audio> |
+| Voz     | Audio                                                                                                                                                                              |
+| ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Ana     | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/ana/amor_niette_05-11-24.wav"></audio>                                  |
+| Paula   | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/paula/amor_niette_05-11-24.wav"></audio> |
+| Pieroni | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/pieroni/amor_niette_05-11-24.wav"></audio>                             |
