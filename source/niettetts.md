@@ -7,7 +7,7 @@ No futuro o código-fonte do NietteTTS será organizada em conjuto com sua docum
 ```
 
 NietteTTS é um MotorTTS (Text-To-Speech) que usar o software Festival Speech System para síntese de fala em Português Brasileiro (futuramente suporte a outros idiomas). Usasse o kit FestVoz para desenvolvimento das vozes com algumas modificações visando o melhorar a síntese.
-As vozes são desenvolvidas usando a técnica de síntese baseada em HMM baseada no motor de síntese HTS. 
+As vozes são desenvolvidas usando a técnica de síntese baseada em HMM. 
 
 ## Modificações/Qualidades do NietteTTS
 
