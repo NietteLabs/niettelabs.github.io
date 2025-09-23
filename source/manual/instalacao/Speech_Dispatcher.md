@@ -3,7 +3,7 @@ Fazer esse processo, possibilitar usar as vozes do NietteTTS não em modo intera
 
 ```{admonition} Aviso
 :class: caution
-O funcionamento com Speech Dispatcher está em fase experimental, cuidado ao usar as vozes do NietteTTS com Speech Dispatcher.
+O funcionamento com Speech Dispatcher está em fase experimental, tenha cuidado ao usar as vozes do NietteTTS com Speech Dispatcher.
 ```
 
 **Fontes:** 

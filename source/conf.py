@@ -27,7 +27,7 @@ language = 'pt-BR'
 html_theme_options = {
 	"repository_url": "https://github.com/NietteLabs/niettelabs.github.io",
 	"use_repository_button": True,
-	"announcement": "Essa é uma documentação está em estagio Alpha! Sofrerar alterações conforme o tempo.",
+	"announcement": "Essa é uma documentação está em estagio alpha! Sofrerar alterações conforme o tempo.",
 }
 
 # -- Options for HTML output -------------------------------------------------
