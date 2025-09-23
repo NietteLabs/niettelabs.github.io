@@ -1,6 +1,6 @@
 # Português Brasileiro
 
-## Informações gerais
+## Informações Gerais
 Fonemas: [Lista de Fonemas Usadas](https://github.com/CUNY-CL/wikipron/blob/master/data/phones/phones/por_bz_broad.phones), formato IPA retiradas do projeto WikiPron
 
 Dicionario: [Dicionario](https://github.com/CUNY-CL/wikipron/blob/master/data/scrape/tsv/por_latn_bz_broad_filtered.tsv), fornecido pelo projeto WikiPron
