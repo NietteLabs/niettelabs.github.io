@@ -17,7 +17,7 @@ Manuais
    manual/instalacao/instalacao
    manual/instalacao/Speech_Dispatcher
 
-Idiomas Disponivéis
+Idiomas Disponíveis
 ^^^^^^^^^^^^^^^^^^^
 
 .. toctree::
