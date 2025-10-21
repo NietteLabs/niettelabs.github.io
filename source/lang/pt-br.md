@@ -12,8 +12,8 @@ Extração de MCEP [SPTK-4.3](https://github.com/sp-nitech/SPTK). Na extração 
 
 | Sample Rate | MCEP Order | Alpha    |
 | ----------- | ---------- | -------- |
-| 16000hz     | 49         | 0.42     |
-| 44000hz     | 68         | 0.713969 |
+| 16Khz     | 49         | 0.42     |
+| 44Khz     | 68         | 0.713969 |
 
 ## Vozes
 
