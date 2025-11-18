@@ -13,7 +13,7 @@ Extração de MCEP [SPTK-4.3](https://github.com/sp-nitech/SPTK). Na extração 
 | Sample Rate | MCEP Order | Alpha    |
 | ----------- | ---------- | -------- |
 | 16Khz     | 49         | 0.42     |
-| 44Khz     | 68         | 0.713969 |
+| 48Khz     | 68         | 0.741547 |
 
 ## Vozes
 
@@ -28,7 +28,7 @@ O treinamento foi feito usado todo os áudios do corpus do falante, sem divisão
 | ------- | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---- |
 | Ana     | [CETUC](https://gitlab.com/fb-audio-corpora/alcaim16k-DVD1de4)   | O [Centro de Estudos em Telecomunicações (CETUC)](https://www.ctc.puc-rio.br/laboratorios-cetuc), através do Professor Doutor Abraham Alcaim, gentilmente cedeu ao LaPS, **para fins de pesquisa exclusivamente**, seu corpus de áudio para Português Brasileiro. Esse corpus, é composto por áudios de 1.000 sentenças, gravados por 101 locutores, totalizando aproximadamente 143 horas de áudio. Locutor ID: F050 | 3.80 |
 | Paula   | [CETUC](https://gitlab.com/fb-audio-corpora/alcaim16k-DVD1de4)   | O [Centro de Estudos em Telecomunicações (CETUC)](https://www.ctc.puc-rio.br/laboratorios-cetuc), através do Professor Doutor Abraham Alcaim, gentilmente cedeu ao LaPS, **para fins de pesquisa exclusivamente**, seu corpus de áudio para Português Brasileiro. Esse corpus, é composto por áudios de 1.000 sentenças, gravados por 101 locutores, totalizando aproximadamente 143 horas de áudio. Locutor ID: F000 | 3.90 |
-| Pieroni | [THLS](https://gitlab.com/lfelipesv/1000-sentences-thls-dataset) | Open Source Brazilian Portuguese Speech Dataset with 1000 sentences balanced phonetically. (Feito downgrade de 48hz para 44hz)                                                                                                                                                                                                                                                                                        | 3.72 |
+| Pieroni | [THLS](https://gitlab.com/lfelipesv/1000-sentences-thls-dataset) | Open Source Brazilian Portuguese Speech Dataset with 1000 sentences balanced phonetically.                                                                                                                                                                                                                                                                                        | 5.92 |
 
 ```{admonition} Sobre MCD
 :class: tip
