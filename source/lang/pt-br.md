@@ -152,7 +152,6 @@ MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudi
 > Eu irei ao seu alcance para ter ajudar.<br>
 >Sempre te amarei e estarei contigo.<br>
 > Eu te amor do fundo do meu coração.<br>
-> ***Texto feito pela Pallas para sua amada Niette***
 
 | Voz     | Audio                                                                                                                                                                              |
 | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
