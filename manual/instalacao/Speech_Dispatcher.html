@@ -1,0 +1,541 @@
+
+<!DOCTYPE html>
+
+
+<html lang="pt-BR" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Usar vozes do NietteTTS com Speech Dispatcher &#8212; NietteTTS 1.0.4-alpha documentation</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=a746c00c" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=a7bb69aa"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'manual/instalacao/Speech_Dispatcher';</script>
+    <link rel="icon" href="../../_static/NietteTTS.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Português Brasileiro" href="../../lang/pt-br.html" />
+    <link rel="prev" title="Instalação das vozes do NietteTTS em seu sistema" href="instalacao.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="pt-BR"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search..."
+         aria-label="Search..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+<aside class="bd-header-announcement" aria-label="Announcement">
+  <div class="bd-header-announcement__content">Essa é uma documentação está em estagio alpha! Sofrerar alterações conforme o tempo.</div>
+</aside>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/NietteTTS.png" class="logo__image only-light" alt="NietteTTS 1.0.4-alpha documentation - Home"/>
+    <script>document.write(`<img src="../../_static/NietteTTS.png" class="logo__image only-dark" alt="NietteTTS 1.0.4-alpha documentation - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="current nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../niettetts.html">O que é o projeto NietteTTS?</a></li>
+
+<li class="toctree-l1"><a class="reference internal" href="instalacao.html">Instalação das vozes do NietteTTS em seu sistema</a></li>
+<li class="toctree-l1 current active"><a class="current reference internal" href="#">Usar vozes do NietteTTS com Speech Dispatcher</a></li>
+</ul>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1"><a class="reference internal" href="../../lang/pt-br.html">Português Brasileiro</a></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/NietteLabs/niettelabs.github.io" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/manual/instalacao/Speech_Dispatcher.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Usar vozes do NietteTTS com Speech Dispatcher</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-da-voz-e-do-g2p">Download da voz e do G2P</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instale-o-modulo-do-speech-dispatch-festival">Instale o módulo do Speech Dispatch Festival</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instale-a-versao-modificada-do-festival-freebsoft-utils">Instale a versão modificada do festival-freebsoft-utils</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-usar-festival-com-pulseaudio-alsa">Para usar Festival com PulseAudio/Alsa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicione-suporte-ao-festival-no-speech-dispatcher">Adicione suporte ao Festival no Speech Dispatcher</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abra-o-seguinte-arquivo-de-configuracoes">Abra o seguinte arquivo de configurações:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listar-vozes-instaladas">Listar vozes instaladas</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section id="usar-vozes-do-niettetts-com-speech-dispatcher">
+<h1>Usar vozes do NietteTTS com Speech Dispatcher<a class="headerlink" href="#usar-vozes-do-niettetts-com-speech-dispatcher" title="Link to this heading">#</a></h1>
+<p>Fazer esse processo, possibilitar usar as vozes do NietteTTS não em modo interativo do Festival, usando em aplicativos que usam o Speech Dispatcher como leitor de tela ou PDFs.</p>
+<div class="caution admonition">
+<p class="admonition-title">Aviso</p>
+<p>O funcionamento com Speech Dispatcher está em fase experimental, tenha cuidado ao usar as vozes do NietteTTS com Speech Dispatcher.</p>
+</div>
+<p><strong>Fontes:</strong></p>
+<p><a class="reference external" href="https://wiki.archlinux.org/title/Festival_(Portugu%C3%AAs)">Página do Festival na wiki.archlinux.org</a></p>
+<p><a class="reference external" href="https://wiki.archlinux.org/title/Speech_dispatcher">Página do Speech Dispatcher na wiki.archlinux.org</a></p>
+<section id="download-da-voz-e-do-g2p">
+<h2>Download da voz e do G2P<a class="headerlink" href="#download-da-voz-e-do-g2p" title="Link to this heading">#</a></h2>
+<p>Siga esse tutorial de instalação das vozes do NietteTTS em: <a class="reference external" href="https://niettelabs.github.io/manual/instalacao/instalacao.html">Instalação</a></p>
+<section id="instale-o-modulo-do-speech-dispatch-festival">
+<h3>Instale o módulo do Speech Dispatch Festival<a class="headerlink" href="#instale-o-modulo-do-speech-dispatch-festival" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>speech-dispatcher-festival
+</pre></div>
+</div>
+</section>
+<section id="instale-a-versao-modificada-do-festival-freebsoft-utils">
+<h3>Instale a versão modificada do festival-freebsoft-utils<a class="headerlink" href="#instale-a-versao-modificada-do-festival-freebsoft-utils" title="Link to this heading">#</a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/NietteLabs/festival-freebsoft-utils
+<span class="nb">cd</span><span class="w"> </span>festival-freebsoft-utils
+sudo<span class="w"> </span>cp<span class="w"> </span>*.scm<span class="w"> </span>/usr/share/festival<span class="w"> </span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="para-usar-festival-com-pulseaudio-alsa">
+<h2>Para usar Festival com PulseAudio/Alsa<a class="headerlink" href="#para-usar-festival-com-pulseaudio-alsa" title="Link to this heading">#</a></h2>
+<p>Edite o arquivo <code class="docutils literal notranslate"><span class="pre">~/.festivalrc</span></code></p>
+<p><strong>PulseAudio:</strong></p>
+<div class="highlight-scheme notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">&#39;Audio_Required_Format</span><span class="w"> </span><span class="ss">&#39;aiff</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">&#39;Audio_Method</span><span class="w"> </span><span class="ss">&#39;Audio_Command</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">&#39;Audio_Command</span><span class="w"> </span><span class="s">&quot;paplay $FILE --client-name=Festival --stream-name=Speech&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Alsa:</strong></p>
+<div class="highlight-scheme notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">&#39;Audio_Method</span><span class="w"> </span><span class="ss">&#39;Audio_Command</span><span class="p">)</span>
+<span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">&#39;Audio_Command</span><span class="w"> </span><span class="s">&quot;aplay -q -c 1 -t raw -f s16 -r $SR $FILE&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="adicione-suporte-ao-festival-no-speech-dispatcher">
+<h2>Adicione suporte ao Festival no Speech Dispatcher<a class="headerlink" href="#adicione-suporte-ao-festival-no-speech-dispatcher" title="Link to this heading">#</a></h2>
+</section>
+<section id="abra-o-seguinte-arquivo-de-configuracoes">
+<h2>Abra o seguinte arquivo de configurações:<a class="headerlink" href="#abra-o-seguinte-arquivo-de-configuracoes" title="Link to this heading">#</a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>nano<span class="w"> </span>~/.config/speech-dispatcher/speechd.conf
+</pre></div>
+</div>
+<p>Procure e edite essa linha:</p>
+<div class="highlight-linuxconfig notranslate"><div class="highlight"><pre><span></span><span class="c">#AddModule &quot;festival&quot;</span>
+</pre></div>
+</div>
+<p>para:</p>
+<div class="highlight-linuxconfig notranslate"><div class="highlight"><pre><span></span>AddModule <span class="s">&quot;festival&quot;</span>
+</pre></div>
+</div>
+</section>
+<section id="listar-vozes-instaladas">
+<h2>Listar vozes instaladas<a class="headerlink" href="#listar-vozes-instaladas" title="Link to this heading">#</a></h2>
+<div class="note admonition">
+<p class="admonition-title">Observação</p>
+<p>Caso houver algum erro ao executar é necessario iniciar o Festival em modo servidor:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>festival<span class="w"> </span>--server<span class="w"> </span><span class="p">&amp;</span>
+</pre></div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>spd-say<span class="w"> </span>-L
+</pre></div>
+</div>
+</section>
+</section>
+
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="instalacao.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Instalação das vozes do NietteTTS em seu sistema</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="../../lang/pt-br.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Português Brasileiro</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#download-da-voz-e-do-g2p">Download da voz e do G2P</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instale-o-modulo-do-speech-dispatch-festival">Instale o módulo do Speech Dispatch Festival</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#instale-a-versao-modificada-do-festival-freebsoft-utils">Instale a versão modificada do festival-freebsoft-utils</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#para-usar-festival-com-pulseaudio-alsa">Para usar Festival com PulseAudio/Alsa</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adicione-suporte-ao-festival-no-speech-dispatcher">Adicione suporte ao Festival no Speech Dispatcher</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#abra-o-seguinte-arquivo-de-configuracoes">Abra o seguinte arquivo de configurações:</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#listar-vozes-instaladas">Listar vozes instaladas</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Pallas da Silva Guedes
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024-2025, Pallas da Silva Guedes.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
