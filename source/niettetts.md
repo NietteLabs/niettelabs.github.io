@@ -20,6 +20,12 @@ Usando Phonetisaurus G2P para treinamento rápido e melhorado em comparação co
 6. Script diversos:
 Scripts para instalação de ferramentas, extração de MCEP, STR, F0 e treinamento de modelo g2p e vocal
 
+
+# Monografia 
+
+A monografia contendo informações de desenvolvimento, construção das vozes e outras informações está disponivél em [monografia.pdf](https://github.com/NietteLabs/NietteTTS/blob/main/monografia.pdf).
+
+
 <!--- ## Logo
 Imagem usada no logo:
 <a href="https://www.flaticon.com/free-icons/speak" title="speak icons">Speak icons created by Voysla - Flaticon</a>
