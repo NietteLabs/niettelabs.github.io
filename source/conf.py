@@ -9,7 +9,7 @@
 project = 'NietteTTS'
 copyright = '2024-%Y, Pallas da Silva Guedes'
 author = 'Pallas da Silva Guedes'
-release = '1.0.4-alpha'
+release = '1.0.5-alpha'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
