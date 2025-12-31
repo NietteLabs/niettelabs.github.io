@@ -18,7 +18,7 @@ Extração de MCEP [SPTK-4.3](https://github.com/sp-nitech/SPTK). Na extração 
 ## Vozes
 
 ```{admonition} Observação sobre o calculo de MCD
-:class: caution dropdown
+:class: caution 
 O treinamento foi feito usado todo os áudios do corpus do falante, sem divisão para avaliação, para o calculo de MCD foi usado 10% dos áudios.
 
 [Mais sobre o MCD](https://learnius.com/slp/9+Speech+Synthesis/1+Fundamental+Concepts/3+Evaluation/mel+cepstral+distortion+(MCD))
