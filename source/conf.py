@@ -13,7 +13,7 @@ release = '1.0.5-alpha'
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
-
+html_permalinks_icon = '<span>#</span>'
 extensions = ['myst_parser', 'sphinx_togglebutton', 'sphinxawesome_theme']
 templates_path = ['_templates']
 exclude_patterns = []
