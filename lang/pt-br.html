@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+
+<html :class="{ 'dark' : darkMode === true }" data-content_root="../" lang="pt-BR" x-data="{ darkMode: $persist(window.matchMedia('(prefers-color-scheme: dark)').matches), activeSection: ''}">
+<head>
+<script>
+    (function () {
+      // Set initial color scheme
+      if ((localStorage.getItem("_x_darkMode") === "true") || (window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+
+      // Watch for media preference changes
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+        localStorage.setItem("_x_darkMode", event.matches);
+        document.documentElement.classList.toggle("dark", event.matches);
+      });
+    })();
+  </script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#030711" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Português Brasileiro | Fest-TTS 1.0.5-alpha documentation</title>
+<meta content="Português Brasileiro | Fest-TTS 1.0.5-alpha documentation" property="og:title"/>
+<meta content="Português Brasileiro | Fest-TTS 1.0.5-alpha documentation" name="twitter:title"/>
+<link href="../_static/pygments.css?v=8d216cef" rel="stylesheet" type="text/css"/>
+<link href="../_static/theme.css?v=73505e79" rel="stylesheet" type="text/css"/>
+<link href="../_static/togglebutton.css?v=9c3e77be" rel="stylesheet" type="text/css"/>
+<link href="../search.html" rel="search" title="Search"/>
+<link href="../genindex.html" rel="index" title="Index"/>
+<link href="../manual/instalacao/Speech_Dispatcher.html" rel="prev" title="Usar vozes do Fest-TTS com Speech Dispatcher"/>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-xs border-border bg-background/90 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Fest-TTS 1.0.5-alpha documentation</span>
+</a></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 gap-2 sm:gap-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center gap-1">
+<button @click="darkMode = !darkMode" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" title="Toggle color scheme" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="16" viewbox="0 96 960 960" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="16" viewbox="0 96 960 960" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="justify-start text-sm md:!hidden bg-background" href="../index.html"><span class="font-bold text-clip whitespace-nowrap">Fest-TTS 1.0.5-alpha documentation</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0">
+<div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../fest-tts.html">O que é o projeto Fest-TTS?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../fest-tts.html#monografia">Monografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/instalacao/instalacao.html">Instalação das vozes do Fest-TTS em seu sistema</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../manual/instalacao/Speech_Dispatcher.html">Usar vozes do Fest-TTS com Speech Dispatcher</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Português Brasileiro</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../index.html">
+<span class="hidden md:inline">Fest-TTS 1.0.5-alpha documentation</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Português Brasileiro</span>
+</nav>
+<div id="content" role="main">
+<section id="portugues-brasileiro">
+<h1>Português Brasileiro<a class="headerlink" href="#portugues-brasileiro" title="Link to this heading"><span>#</span></a></h1>
+<section id="informacoes-gerais">
+<h2>Informações Gerais<a class="headerlink" href="#informacoes-gerais" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#informacoes-gerais'"><span>#</span></a></h2>
+<p>Fonemas: <a class="reference external" href="https://github.com/CUNY-CL/wikipron/blob/master/data/phones/phones/por_bz_broad.phones">Lista de Fonemas Usadas</a>, formato IPA retiradas do projeto WikiPron</p>
+<p>Dicionario: <a class="reference external" href="https://github.com/CUNY-CL/wikipron/blob/master/data/scrape/tsv/por_latn_bz_broad_filtered.tsv">Dicionario</a>, fornecido pelo projeto WikiPron</p>
+<p>Foi usando <a class="reference external" href="https://github.com/google/REAPER">REAPER</a> para extração de F0 para
+Extração de MCEP <a class="reference external" href="https://github.com/sp-nitech/SPTK">SPTK-4.3</a>. Na extração de MCEP foram usados como base o artigo <a class="reference external" href="https://www.cstr.ed.ac.uk/downloads/publications/2010/JunichiICASSP10.pdf"><em>Simple Methods for Improving Speaker-Similarity of HMM-Based Speech Synthesis - Junichi Yamagishi, Simon King</em></a> para valores de MCEP Order e Alpha para melhor extração para as vozes de 16hz e 44hz. Script para extração de STR do MaryTTS foi usando para extração de STR das vozes.</p>
+<p><strong>Valores usados:</strong></p>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Sample Rate</p></th>
+<th class="head"><p>MCEP Order</p></th>
+<th class="head"><p>Alpha</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>16Khz</p></td>
+<td><p>49</p></td>
+<td><p>0.42</p></td>
+</tr>
+<tr class="row-odd"><td><p>48Khz</p></td>
+<td><p>68</p></td>
+<td><p>0.741547</p></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="vozes">
+<h2>Vozes<a class="headerlink" href="#vozes" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#vozes'"><span>#</span></a></h2>
+<div class="caution admonition">
+<p class="admonition-title">Observação sobre o calculo de MCD</p>
+<p>O treinamento foi feito usado todo os áudios do corpus do falante, sem divisão para avaliação, para o calculo de MCD foi usado 10% dos áudios.</p>
+<p><a class="reference external" href="https://learnius.com/slp/9+Speech+Synthesis/1+Fundamental+Concepts/3+Evaluation/mel+cepstral+distortion+(MCD)">Mais sobre o MCD</a></p>
+</div>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Nome</p></th>
+<th class="head"><p>Corpus usando</p></th>
+<th class="head"><p>Descrição</p></th>
+<th class="head"><p>MCD</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ana</p></td>
+<td><p><a class="reference external" href="https://gitlab.com/fb-audio-corpora/alcaim16k-DVD1de4">CETUC</a></p></td>
+<td><p>O <a class="reference external" href="https://www.ctc.puc-rio.br/laboratorios-cetuc">Centro de Estudos em Telecomunicações (CETUC)</a>, através do Professor Doutor Abraham Alcaim, gentilmente cedeu ao LaPS, <strong>para fins de pesquisa exclusivamente</strong>, seu corpus de áudio para Português Brasileiro. Esse corpus, é composto por áudios de 1.000 sentenças, gravados por 101 locutores, totalizando aproximadamente 143 horas de áudio. Locutor ID: F050</p></td>
+<td><p>3.80</p></td>
+</tr>
+<tr class="row-odd"><td><p>Paula</p></td>
+<td><p><a class="reference external" href="https://gitlab.com/fb-audio-corpora/alcaim16k-DVD1de4">CETUC</a></p></td>
+<td><p>O <a class="reference external" href="https://www.ctc.puc-rio.br/laboratorios-cetuc">Centro de Estudos em Telecomunicações (CETUC)</a>, através do Professor Doutor Abraham Alcaim, gentilmente cedeu ao LaPS, <strong>para fins de pesquisa exclusivamente</strong>, seu corpus de áudio para Português Brasileiro. Esse corpus, é composto por áudios de 1.000 sentenças, gravados por 101 locutores, totalizando aproximadamente 143 horas de áudio. Locutor ID: F000</p></td>
+<td><p>3.90</p></td>
+</tr>
+<tr class="row-even"><td><p>Pieroni</p></td>
+<td><p><a class="reference external" href="https://gitlab.com/lfelipesv/1000-sentences-thls-dataset">THLS</a></p></td>
+<td><p>Open Source Brazilian Portuguese Speech Dataset with 1000 sentences balanced phonetically.</p></td>
+<td><p>5.92</p></td>
+</tr>
+</tbody>
+</table>
+<div class="tip admonition">
+<p class="admonition-title">Sobre MCD</p>
+<p>MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudios gerados (sintetizados) com os áudios usandos para treinamento da voz.
+<br/>
+<strong>MCD &lt;= 0 - Perfeito</strong>;
+<br/>
+<strong>MCD &lt;= 1 - Muito bom</strong>;
+<br/>
+<strong>MCD &lt;= 2 - Bom</strong>;
+<br/>
+<strong>MCD &lt;= 3 - Médiano</strong>;
+<br/>
+<strong>MCD &lt;= 4 - Ruím</strong>;
+<br/>
+<strong>MDD &gt;= 5 - Muito Rúim</strong>;</p>
+</div>
+</section>
+<section id="amostras">
+<h2>Amostras<a class="headerlink" href="#amostras" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#amostras'"><span>#</span></a></h2>
+<p><strong>Texto 1:</strong></p>
+<blockquote>
+<div><p>Pequeno Manual Anti-Transfobia<br/>
+Prefácio: A Dor que Ensina e a Inspiração que Guia<br/>
+Por Júlia Klee<br/>
+Este livro nasce de uma necessidade urgente e de uma profunda
+admiração. A urgência vem da minha própria trajetória, marcada pela dor
+da transfobia em sua forma mais íntima e dilacerante. Durante muito
+tempo, a transfobia era para mim um conceito distante, uma palavra
+carregada de um peso que eu não compreendia em sua totalidade,
+embora soubesse de sua existência e de sua capacidade de ferir e matar. A
+real dimensão dessa violência só me atingiu de forma visceral quando a
+vivenciei na pele, vinda de quem eu menos esperava: minha própria mãe.
+A ameaça velada, o medo em seus olhos apenas pelo fato de eu ser quem
+eu sou, Júlia, uma mulher trans, rasgou em mim uma ferida que ainda
+lateja. Foi nesse momento de dor profunda que a transfobia deixou de ser
+uma abstração e se tornou uma realidade palpável, uma força opressora
+que tenta nos anular, nos silenciar, nos apagar do mundo.<br/>
+<em><strong><a class="reference external" href="https://loja.uiclap.com/titulo/ua99785/">Pequeno Manual Anti-Transfobia - Por Júlia Klee</a></strong></em></p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Voz</p></th>
+<th class="head"><p>Audio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ana</p></td>
+<td><p><audio controls="" src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/ana/livro.wav"></audio></p></td>
+</tr>
+<tr class="row-odd"><td><p>Paula</p></td>
+<td><p><audio controls="" src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/paula/livro.wav"></audio></p></td>
+</tr>
+<tr class="row-even"><td><p>Pieroni</p></td>
+<td><p><audio controls="" src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/pieroni/livro.wav"></audio></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Texto 2:</strong></p>
+<blockquote>
+<div><p>Hoje, na janela, brilha o Sol<br/>
+E mesmo assim, estou tão triste<br/>
+Pois não sei como vai ser<br/>
+Eu sem você<br/>
+Essa noite, quase nem dormi<br/>
+Só em pensar<br/>
+Que fomos tão felizes, e como vai ser<br/>
+Eu sem você<br/>
+Você vai embora, e meus sonhos vão contigo<br/>
+Me esquecerás, me esquecerás<br/>
+Sei que vou perder um grande amor e um bom amigo<br/>
+Me diga, então, como vai ser<br/>
+Eu sem você, eu sem você<br/>
+Sei que não adianta mais pensar<br/>
+No que passou<br/>
+Não vai ser fácil porque sei que vou sofrer<br/>
+Eu sem você<br/>
+Essa noite, quase nem dormi<br/>
+Só em pensar<br/>
+Que fomos tão felizes, e como vai ser<br/>
+Eu sem você<br/>
+Você vai embora, e meus sonhos vão contigo<br/>
+Me esquecerás, me esquecerás<br/>
+Sei que vou perder um grande amor e um bom amigo<br/>
+Me diga, então, como vai ser<br/>
+Eu sem você, eu sem você<br/>
+Você vai embora, e meus sonhos vão contigo<br/>
+Me esquecerás, me esquecerás<br/>
+Sei que vou perder um grande amor e um bom amigo<br/>
+Me diga, então, como vai ser<br/>
+Você vai embora, e meus sonhos vão contigo<br/>
+Me esquecerás, me esquecerás<br/>
+Sei que vou perder um grande amor e um bom amigo<br/>
+Me diga, então, como vai ser<br/>
+Você vai embora, e meus sonhos vão contigo<br/>
+Me esquecerás, me esquecerás<br/>
+Sei que vou perder um grande amor e um bom amigo<br/>
+Me diga, então, como vai sofrer<br/>
+<em><strong>Eu Sem Você (Por Que Te Vás) - Lílian</strong></em></p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Voz</p></th>
+<th class="head"><p>Audio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ana</p></td>
+<td><p><audio controls="" src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/ana/musica.wav"></audio></p></td>
+</tr>
+<tr class="row-odd"><td><p>Paula</p></td>
+<td><p><audio controls="" src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/paula/musica.wav"></audio></p></td>
+</tr>
+<tr class="row-even"><td><p>Pieroni</p></td>
+<td><p><audio controls="" src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/pieroni/musica.wav"></audio></p></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Texto 3:</strong></p>
+<blockquote>
+<div><p>Eu sempre penso em ti.<br/>
+Eu sempre amarei a ti.<br/>
+Sempre aqui para ti.<br/>
+<br/>
+Sinto saudades de ti em todos os dias.<br/>
+Quero está em seus braços, ao seu corpo quente.<br/>
+Quero vê-la você todos os dias.<br/>
+Quero ouvir sua bela voz em meus ouvidos.<br/>
+Você é uma das pessoas mais belas que conheci.<br/>
+Você é bondosa.<br/>
+é corajosa.<br/>
+é consciente.<br/>
+Você é uma raridade nesse mundo que vivemos.<br/>
+Perdão aos meus erros.<br/>
+Eu sempre estou a tentar melhorar o meu ser, para ti e para mim.<br/>
+Eu suporto o sofrimento dessa realidade em minha mente.<br/>
+O sofrimento mental é doloroso de sentir.<br/>
+Junto com o grande cansaço e tristeza.<br/>
+Mas com tudo isso, estou de pé para conseguir nossa felicidade.<br/>
+Você é uma razão da minha vivencia.<br/>
+O meu objetivo de viver com ti é a força é o que energizar o meu corpo.<br/>
+Eu desejo do fundo do meu coração e da minha mente;<br/>
+Que você consiga realizar os seus sonhos;<br/>
+Que consiga, combate a escuridão em nossa realidade.<br/>
+Que tenha a mente forte que habita em ti.<br/>
+Todos os momentos, eu estarei aqui.<br/>
+Eu irei ao seu alcance para ter ajudar.<br/>
+Sempre te amarei e estarei contigo.<br/>
+Eu te amor do fundo do meu coração.<br/></p>
+</div></blockquote>
+<table class="docutils align-default">
+<thead>
+<tr class="row-odd"><th class="head"><p>Voz</p></th>
+<th class="head"><p>Audio</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Ana</p></td>
+<td><p><audio controls="" src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/ana/amor_niette_05-11-24.wav"></audio></p></td>
+</tr>
+<tr class="row-odd"><td><p>Paula</p></td>
+<td><p><audio controls="" src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/paula/amor_niette_05-11-24.wav"></audio></p></td>
+</tr>
+<tr class="row-even"><td><p>Pieroni</p></td>
+<td><p><audio controls="" src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/pieroni/amor_niette_05-11-24.wav"></audio></p></td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] h-full overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#informacoes-gerais'" class="reference internal" href="#informacoes-gerais">Informações Gerais</a></li>
+<li><a :data-current="activeSection === '#vozes'" class="reference internal" href="#vozes">Vozes</a></li>
+<li><a :data-current="activeSection === '#amostras'" class="reference internal" href="#amostras">Amostras</a></li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2024-2026, Pallas da Silva Guedes Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 9.1.0</a></p>
+</div>
+</div>
+</footer>
+</div>
+<script src="../_static/documentation_options.js?v=c615bb19"></script>
+<script src="../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script defer="defer" src="../_static/theme.js?v=582b20c5"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../_static/togglebutton.js?v=b8b12719"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+</body>
+</html>

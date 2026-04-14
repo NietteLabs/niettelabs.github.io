@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+
+<html :class="{ 'dark' : darkMode === true }" data-content_root="../../" lang="pt-BR" x-data="{ darkMode: $persist(window.matchMedia('(prefers-color-scheme: dark)').matches), activeSection: ''}">
+<head>
+<script>
+    (function () {
+      // Set initial color scheme
+      if ((localStorage.getItem("_x_darkMode") === "true") || (window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+        document.documentElement.classList.add("dark");
+      }
+
+      // Watch for media preference changes
+      window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", (event) => {
+        localStorage.setItem("_x_darkMode", event.matches);
+        document.documentElement.classList.toggle("dark", event.matches);
+      });
+    })();
+  </script>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<meta charset="utf-8"/>
+<meta content="#ffffff" media="(prefers-color-scheme: light)" name="theme-color"/>
+<meta content="#030711" media="(prefers-color-scheme: dark)" name="theme-color"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Usar vozes do Fest-TTS com Speech Dispatcher | Fest-TTS 1.0.5-alpha documentation</title>
+<meta content="Usar vozes do Fest-TTS com Speech Dispatcher | Fest-TTS 1.0.5-alpha documentation" property="og:title"/>
+<meta content="Usar vozes do Fest-TTS com Speech Dispatcher | Fest-TTS 1.0.5-alpha documentation" name="twitter:title"/>
+<link href="../../_static/pygments.css?v=8d216cef" rel="stylesheet" type="text/css"/>
+<link href="../../_static/theme.css?v=73505e79" rel="stylesheet" type="text/css"/>
+<link href="../../_static/togglebutton.css?v=9c3e77be" rel="stylesheet" type="text/css"/>
+<link href="../../search.html" rel="search" title="Search"/>
+<link href="../../genindex.html" rel="index" title="Index"/>
+<link href="../../lang/pt-br.html" rel="next" title="Português Brasileiro"/>
+<link href="instalacao.html" rel="prev" title="Instalação das vozes do Fest-TTS em seu sistema"/>
+</head>
+<body :class="{ 'overflow-hidden': showSidebar }" class="min-h-screen font-sans antialiased bg-background text-foreground" x-data="{ showSidebar: false, showScrollTop: false }">
+<div @click.self="showSidebar = false" class="fixed inset-0 z-50 overflow-hidden bg-background/80 backdrop-blur-sm md:hidden" x-cloak="" x-show="showSidebar"></div><div class="relative flex flex-col min-h-screen" id="page"><a class="absolute top-0 left-0 z-[100] block bg-background p-4 text-xl transition -translate-x-full opacity-0 focus:translate-x-0 focus:opacity-100" href="#content">
+      Skip to content
+    </a><header class="sticky top-0 z-40 w-full border-b shadow-xs border-border bg-background/90 backdrop-blur"><div class="container flex items-center h-14">
+<div class="hidden mr-4 md:flex">
+<a class="flex items-center mr-6" href="../../index.html"><span class="hidden font-bold sm:inline-block text-clip whitespace-nowrap">Fest-TTS 1.0.5-alpha documentation</span>
+</a></div><button @click="showSidebar = true" class="inline-flex items-center justify-center h-10 px-0 py-2 mr-2 text-base font-medium transition-colors rounded-md hover:text-accent-foreground hover:bg-transparent md:hidden" type="button">
+<svg aria-hidden="true" fill="currentColor" height="24" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M152.587 825.087q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440Zm0-203.587q-19.152 0-32.326-13.174T107.087 576q0-19.152 13.174-32.326t32.326-13.174h320q19.152 0 32.326 13.174T518.087 576q0 19.152-13.174 32.326T472.587 621.5h-320Zm0-203.587q-19.152 0-32.326-13.174t-13.174-32.326q0-19.152 13.174-32.326t32.326-13.174h440q19.152 0 32.326 13.174t13.174 32.326q0 19.152-13.174 32.326t-32.326 13.174h-440ZM708.913 576l112.174 112.174q12.674 12.674 12.674 31.826t-12.674 31.826Q808.413 764.5 789.261 764.5t-31.826-12.674l-144-144Q600 594.391 600 576t13.435-31.826l144-144q12.674-12.674 31.826-12.674t31.826 12.674q12.674 12.674 12.674 31.826t-12.674 31.826L708.913 576Z"></path>
+</svg>
+<span class="sr-only">Toggle navigation menu</span>
+</button>
+<div class="flex items-center justify-between flex-1 gap-2 sm:gap-4 md:justify-end">
+<div class="flex-1 w-full md:w-auto md:flex-none"><form @keydown.k.window.meta="$refs.search.focus()" action="../../search.html" class="relative flex items-center group" id="searchbox" method="get">
+<input aria-label="Search the docs" class="inline-flex items-center font-medium transition-colors bg-transparent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 ring-offset-background border border-input hover:bg-accent focus:bg-accent hover:text-accent-foreground focus:text-accent-foreground hover:placeholder-accent-foreground py-2 px-4 relative h-9 w-full justify-start rounded-[0.5rem] text-sm text-muted-foreground sm:pr-12 md:w-40 lg:w-64" id="search-input" name="q" placeholder="Search ..." type="search" x-ref="search"/>
+<kbd class="pointer-events-none absolute right-1.5 top-2 hidden h-5 select-none text-muted-foreground items-center gap-1 rounded border border-border bg-muted px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex group-hover:bg-accent group-hover:text-accent-foreground">
+<span class="text-xs">⌘</span>
+    K
+  </kbd>
+</form>
+</div>
+<nav class="flex items-center gap-1">
+<button @click="darkMode = !darkMode" class="relative inline-flex items-center justify-center px-0 text-sm font-medium transition-colors rounded-md hover:bg-accent hover:text-accent-foreground h-9 w-9" title="Toggle color scheme" type="button">
+<svg class="absolute transition-all scale-100 rotate-0 dark:-rotate-90 dark:scale-0" fill="currentColor" height="16" viewbox="0 96 960 960" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 685q45.456 0 77.228-31.772Q589 621.456 589 576q0-45.456-31.772-77.228Q525.456 467 480 467q-45.456 0-77.228 31.772Q371 530.544 371 576q0 45.456 31.772 77.228Q434.544 685 480 685Zm0 91q-83 0-141.5-58.5T280 576q0-83 58.5-141.5T480 376q83 0 141.5 58.5T680 576q0 83-58.5 141.5T480 776ZM80 621.5q-19.152 0-32.326-13.174T34.5 576q0-19.152 13.174-32.326T80 530.5h80q19.152 0 32.326 13.174T205.5 576q0 19.152-13.174 32.326T160 621.5H80Zm720 0q-19.152 0-32.326-13.174T754.5 576q0-19.152 13.174-32.326T800 530.5h80q19.152 0 32.326 13.174T925.5 576q0 19.152-13.174 32.326T880 621.5h-80Zm-320-320q-19.152 0-32.326-13.174T434.5 256v-80q0-19.152 13.174-32.326T480 130.5q19.152 0 32.326 13.174T525.5 176v80q0 19.152-13.174 32.326T480 301.5Zm0 720q-19.152 0-32.326-13.17Q434.5 995.152 434.5 976v-80q0-19.152 13.174-32.326T480 850.5q19.152 0 32.326 13.174T525.5 896v80q0 19.152-13.174 32.33-13.174 13.17-32.326 13.17ZM222.174 382.065l-43-42Q165.5 327.391 166 308.239t13.174-33.065q13.435-13.674 32.587-13.674t32.065 13.674l42.239 43q12.674 13.435 12.555 31.706-.12 18.272-12.555 31.946-12.674 13.674-31.445 13.413-18.772-.261-32.446-13.174Zm494 494.761-42.239-43q-12.674-13.435-12.674-32.087t12.674-31.565Q686.609 756.5 705.38 757q18.772.5 32.446 13.174l43 41.761Q794.5 824.609 794 843.761t-13.174 33.065Q767.391 890.5 748.239 890.5t-32.065-13.674Zm-42-494.761Q660.5 369.391 661 350.62q.5-18.772 13.174-32.446l41.761-43Q728.609 261.5 747.761 262t33.065 13.174q13.674 13.435 13.674 32.587t-13.674 32.065l-43 42.239q-13.435 12.674-31.706 12.555-18.272-.12-31.946-12.555Zm-495 494.761Q165.5 863.391 165.5 844.239t13.674-32.065l43-42.239q13.435-12.674 32.087-12.674t31.565 12.674Q299.5 782.609 299 801.38q-.5 18.772-13.174 32.446l-41.761 43Q231.391 890.5 212.239 890t-33.065-13.174ZM480 576Z"></path>
+</svg>
+<svg class="absolute transition-all scale-0 rotate-90 dark:rotate-0 dark:scale-100" fill="currentColor" height="16" viewbox="0 96 960 960" width="16" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 936q-151 0-255.5-104.5T120 576q0-138 90-239.5T440 218q25-3 39 18t-1 44q-17 26-25.5 55t-8.5 61q0 90 63 153t153 63q31 0 61.5-9t54.5-25q21-14 43-1.5t19 39.5q-14 138-117.5 229T480 936Zm0-80q88 0 158-48.5T740 681q-20 5-40 8t-40 3q-123 0-209.5-86.5T364 396q0-20 3-40t8-40q-78 32-126.5 102T200 576q0 116 82 198t198 82Zm-10-270Z"></path>
+</svg>
+</button>
+</nav>
+</div>
+</div>
+</header>
+<div class="flex-1"><div class="container md:grid md:grid-cols-[220px_minmax(0,1fr)] md:gap-6 lg:grid-cols-[240px_minmax(0,1fr)] lg:gap-10"><aside :aria-hidden="!showSidebar" :class="{ 'translate-x-0': showSidebar }" class="fixed inset-y-0 left-0 md:top-14 z-50 md:z-30 bg-background md:bg-transparent transition-all duration-100 -translate-x-full md:translate-x-0 ml-0 p-6 md:p-0 md:-ml-2 md:h-[calc(100vh-3.5rem)] w-5/6 md:w-full overflow-y-auto border-r border-border md:sticky" id="left-sidebar">
+<a class="justify-start text-sm md:!hidden bg-background" href="../../index.html"><span class="font-bold text-clip whitespace-nowrap">Fest-TTS 1.0.5-alpha documentation</span>
+</a>
+<div class="relative overflow-hidden md:overflow-auto my-4 md:my-0">
+<div class="overflow-y-auto h-full w-full relative pr-6"><nav class="table w-full min-w-full my-6 lg:my-8">
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../../fest-tts.html">O que é o projeto Fest-TTS?</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../fest-tts.html#monografia">Monografia</a></li>
+<li class="toctree-l1"><a class="reference internal" href="instalacao.html">Instalação das vozes do Fest-TTS em seu sistema</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Usar vozes do Fest-TTS com Speech Dispatcher</a></li>
+</ul>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../lang/pt-br.html">Português Brasileiro</a></li>
+</ul>
+</nav>
+</div>
+</div>
+<button @click="showSidebar = false" class="absolute md:hidden right-4 top-4 rounded-sm opacity-70 transition-opacity hover:opacity-100" type="button">
+<svg class="h-4 w-4" fill="currentColor" height="24" stroke="none" viewbox="0 96 960 960" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M480 632 284 828q-11 11-28 11t-28-11q-11-11-11-28t11-28l196-196-196-196q-11-11-11-28t11-28q11-11 28-11t28 11l196 196 196-196q11-11 28-11t28 11q11 11 11 28t-11 28L536 576l196 196q11 11 11 28t-11 28q-11 11-28 11t-28-11L480 632Z"></path>
+</svg>
+</button>
+</aside>
+<main class="relative py-6 lg:gap-10 lg:py-8 xl:grid xl:grid-cols-[1fr_300px]">
+<div class="w-full min-w-0 mx-auto">
+<nav aria-label="breadcrumbs" class="flex items-center mb-4 space-x-1 text-sm text-muted-foreground">
+<a class="overflow-hidden text-ellipsis whitespace-nowrap hover:text-foreground" href="../../index.html">
+<span class="hidden md:inline">Fest-TTS 1.0.5-alpha documentation</span>
+<svg aria-label="Home" class="md:hidden" fill="currentColor" height="18" stroke="none" viewbox="0 96 960 960" width="18" xmlns="http://www.w3.org/2000/svg">
+<path d="M240 856h120V616h240v240h120V496L480 316 240 496v360Zm-80 80V456l320-240 320 240v480H520V696h-80v240H160Zm320-350Z"></path>
+</svg>
+</a>
+<div class="mr-1">/</div><span aria-current="page" class="font-medium text-foreground overflow-hidden text-ellipsis whitespace-nowrap">Usar vozes do Fest-TTS com Speech Dispatcher</span>
+</nav>
+<div id="content" role="main">
+<section id="usar-vozes-do-fest-tts-com-speech-dispatcher">
+<h1>Usar vozes do Fest-TTS com Speech Dispatcher<a class="headerlink" href="#usar-vozes-do-fest-tts-com-speech-dispatcher" title="Link to this heading"><span>#</span></a></h1>
+<p>Fazer esse processo, possibilitar usar as vozes do Fest-TTS não em modo interativo do Festival, usando em aplicativos que usam o Speech Dispatcher como leitor de tela ou PDFs.</p>
+<div class="caution admonition">
+<p class="admonition-title">Aviso</p>
+<p>O funcionamento com Speech Dispatcher está em fase experimental, tenha cuidado ao usar as vozes do Fest-TTS com Speech Dispatcher.</p>
+</div>
+<p><strong>Fontes:</strong></p>
+<p><a class="reference external" href="https://wiki.archlinux.org/title/Festival_(Portugu%C3%AAs)">Página do Festival na wiki.archlinux.org</a></p>
+<p><a class="reference external" href="https://wiki.archlinux.org/title/Speech_dispatcher">Página do Speech Dispatcher na wiki.archlinux.org</a></p>
+<section id="download-da-voz-e-do-g2p">
+<h2>Download da voz e do G2P<a class="headerlink" href="#download-da-voz-e-do-g2p" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#download-da-voz-e-do-g2p'"><span>#</span></a></h2>
+<p>Siga esse tutorial de instalação das vozes do Fest-TTS em: <a class="reference external" href="https://pallasspeechsystem.github.io/manual/instalacao/instalacao.html">Instalação</a></p>
+<section id="instale-o-modulo-do-speech-dispatch-festival">
+<h3>Instale o módulo do Speech Dispatch Festival<a class="headerlink" href="#instale-o-modulo-do-speech-dispatch-festival" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#instale-o-modulo-do-speech-dispatch-festival'"><span>#</span></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">sudo<span class="w"> </span>apt-get<span class="w"> </span>install<span class="w"> </span>speech-dispatcher-festival
+</span></code></pre></div>
+</div>
+</section>
+<section id="instale-a-versao-modificada-do-festival-freebsoft-utils">
+<h3>Instale a versão modificada do festival-freebsoft-utils<a class="headerlink" href="#instale-a-versao-modificada-do-festival-freebsoft-utils" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#instale-a-versao-modificada-do-festival-freebsoft-utils'"><span>#</span></a></h3>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">git<span class="w"> </span>clone<span class="w"> </span>https://github.com/PallasSpeechSystem/festival-freebsoft-utils
+</span><span id="line-2"><span class="nb">cd</span><span class="w"> </span>festival-freebsoft-utils
+</span><span id="line-3">sudo<span class="w"> </span>cp<span class="w"> </span>*.scm<span class="w"> </span>/usr/share/festival<span class="w"> </span>
+</span></code></pre></div>
+</div>
+</section>
+</section>
+<section id="para-usar-festival-com-pulseaudio-alsa">
+<h2>Para usar Festival com PulseAudio/Alsa<a class="headerlink" href="#para-usar-festival-com-pulseaudio-alsa" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#para-usar-festival-com-pulseaudio-alsa'"><span>#</span></a></h2>
+<p>Edite o arquivo <code class="docutils literal notranslate"><span class="pre">~/.festivalrc</span></code></p>
+<p><strong>PulseAudio:</strong></p>
+<div class="highlight-scheme notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">'Audio_Required_Format</span><span class="w"> </span><span class="ss">'aiff</span><span class="p">)</span>
+</span><span id="line-2"><span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">'Audio_Method</span><span class="w"> </span><span class="ss">'Audio_Command</span><span class="p">)</span>
+</span><span id="line-3"><span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">'Audio_Command</span><span class="w"> </span><span class="s">"paplay $FILE --client-name=Festival --stream-name=Speech"</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+<p><strong>Alsa:</strong></p>
+<div class="highlight-scheme notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">'Audio_Method</span><span class="w"> </span><span class="ss">'Audio_Command</span><span class="p">)</span>
+</span><span id="line-2"><span class="p">(</span><span class="nf">Parameter</span><span class="o">.</span><span class="nv">set</span><span class="w"> </span><span class="ss">'Audio_Command</span><span class="w"> </span><span class="s">"aplay -q -c 1 -t raw -f s16 -r $SR $FILE"</span><span class="p">)</span>
+</span></code></pre></div>
+</div>
+</section>
+<section id="adicione-suporte-ao-festival-no-speech-dispatcher">
+<h2>Adicione suporte ao Festival no Speech Dispatcher<a class="headerlink" href="#adicione-suporte-ao-festival-no-speech-dispatcher" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#adicione-suporte-ao-festival-no-speech-dispatcher'"><span>#</span></a></h2>
+</section>
+<section id="abra-o-seguinte-arquivo-de-configuracoes">
+<h2>Abra o seguinte arquivo de configurações:<a class="headerlink" href="#abra-o-seguinte-arquivo-de-configuracoes" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#abra-o-seguinte-arquivo-de-configuracoes'"><span>#</span></a></h2>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">nano<span class="w"> </span>~/.config/speech-dispatcher/speechd.conf
+</span></code></pre></div>
+</div>
+<p>Procure e edite essa linha:</p>
+<div class="highlight-linuxconfig notranslate"><div class="highlight"><pre><span></span><code><span id="line-1"><span class="c">#AddModule "festival"</span>
+</span></code></pre></div>
+</div>
+<p>para:</p>
+<div class="highlight-linuxconfig notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">AddModule <span class="s">"festival"</span>
+</span></code></pre></div>
+</div>
+</section>
+<section id="listar-vozes-instaladas">
+<h2>Listar vozes instaladas<a class="headerlink" href="#listar-vozes-instaladas" title="Link to this heading" x-intersect.margin.0%.0%.-70%.0%="activeSection = '#listar-vozes-instaladas'"><span>#</span></a></h2>
+<div class="note admonition">
+<p class="admonition-title">Observação</p>
+<p>Caso houver algum erro ao executar é necessario iniciar o Festival em modo servidor:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">festival<span class="w"> </span>--server<span class="w"> </span><span class="p">&amp;</span>
+</span></code></pre></div>
+</div>
+</div>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><code><span id="line-1">spd-say<span class="w"> </span>-L
+</span></code></pre></div>
+</div>
+</section>
+</section>
+</div></div><aside class="hidden text-sm xl:block" id="right-sidebar">
+<div class="sticky top-16 -mt-10 max-h-[calc(100vh-5rem)] h-full overflow-y-auto pt-6 space-y-2"><p class="font-medium">On this page</p>
+<ul>
+<li><a :data-current="activeSection === '#download-da-voz-e-do-g2p'" class="reference internal" href="#download-da-voz-e-do-g2p">Download da voz e do G2P</a><ul>
+<li><a :data-current="activeSection === '#instale-o-modulo-do-speech-dispatch-festival'" class="reference internal" href="#instale-o-modulo-do-speech-dispatch-festival">Instale o módulo do Speech Dispatch Festival</a></li>
+<li><a :data-current="activeSection === '#instale-a-versao-modificada-do-festival-freebsoft-utils'" class="reference internal" href="#instale-a-versao-modificada-do-festival-freebsoft-utils">Instale a versão modificada do festival-freebsoft-utils</a></li>
+</ul>
+</li>
+<li><a :data-current="activeSection === '#para-usar-festival-com-pulseaudio-alsa'" class="reference internal" href="#para-usar-festival-com-pulseaudio-alsa">Para usar Festival com PulseAudio/Alsa</a></li>
+<li><a :data-current="activeSection === '#adicione-suporte-ao-festival-no-speech-dispatcher'" class="reference internal" href="#adicione-suporte-ao-festival-no-speech-dispatcher">Adicione suporte ao Festival no Speech Dispatcher</a></li>
+<li><a :data-current="activeSection === '#abra-o-seguinte-arquivo-de-configuracoes'" class="reference internal" href="#abra-o-seguinte-arquivo-de-configuracoes">Abra o seguinte arquivo de configurações:</a></li>
+<li><a :data-current="activeSection === '#listar-vozes-instaladas'" class="reference internal" href="#listar-vozes-instaladas">Listar vozes instaladas</a></li>
+</ul>
+</div>
+</aside>
+</main>
+</div>
+</div><footer class="py-6 border-t border-border md:py-0">
+<div class="container flex flex-col items-center justify-between gap-4 md:h-24 md:flex-row">
+<div class="flex flex-col items-center gap-4 px-8 md:flex-row md:gap-2 md:px-0">
+<p class="text-sm leading-loose text-center text-muted-foreground md:text-left">© 2024-2026, Pallas da Silva Guedes Built with <a class="font-medium underline underline-offset-4" href="https://www.sphinx-doc.org" rel="noreferrer">Sphinx 9.1.0</a></p>
+</div>
+</div>
+</footer>
+</div>
+<script src="../../_static/documentation_options.js?v=c615bb19"></script>
+<script src="../../_static/doctools.js?v=fd6eb6e6"></script>
+<script src="../../_static/sphinx_highlight.js?v=6ffebe34"></script>
+<script defer="defer" src="../../_static/theme.js?v=582b20c5"></script>
+<script>let toggleHintShow = 'Click to show';</script>
+<script>let toggleHintHide = 'Click to hide';</script>
+<script>let toggleOpenOnPrint = 'true';</script>
+<script src="../../_static/togglebutton.js?v=b8b12719"></script>
+<script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+</body>
+</html>
