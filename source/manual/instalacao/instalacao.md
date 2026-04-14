@@ -1,12 +1,12 @@
-# Instalação das vozes do NietteTTS em seu sistema
+# Instalação das vozes do Fest-TTS em seu sistema
 
 Disponível somente para sistemas operacionais (Debian/Ubuntu) ou que baseiam neles.
 
 ## Download das vozes
 
-Navegue em [releases do NietteTTS](https://github.com/NietteLabs/NietteTTS/releases), na versão recente e baixe uma das vozes disponíveis em .deb.
+Navegue em [releases do Fest-TTS](https://github.com/PallasSpeechSystem/Fest-TTS/releases), na versão recente e baixe uma das vozes disponíveis em .deb.
 
-Navegue em [releases do phonetisaurus-deb](https://github.com/NietteLabs/phonetisaurus-deb/releases/), na versão recente e baixe o pacote .deb da arquitetura da sua máquina.
+Navegue em [releases do phonetisaurus-deb](https://github.com/PallasSpeechSystem/phonetisaurus-deb/releases/), na versão recente e baixe o pacote .deb da arquitetura da sua máquina.
 
 ### Como saber arquitetura da minha máquina (notebook/computador/outros)
 Para saber sua arquitetura da sua máquina, basta digitar:
@@ -35,7 +35,7 @@ sudo apt-get install ./arquivo_da_sua_arquitetura.deb ./voz.deb
 
 **Exemplo com amd64 (x86_64) e Voz Paula está na pasta download:**
 ```bash
-sudo apt-get install ./Download/amd64.deb ./Download/festival-pt-niettelabs-paula-cg.deb
+sudo apt-get install ./Download/amd64.deb ./Download/festival-pt-pallasspeechsystem-paula-cg.deb
 ```
 
 Após executar um desses comandos, é necessário digitar a senha para fazer a instalação (é geralmente solicitado).
@@ -59,7 +59,7 @@ Selecionar voz:
 ### Exemplo
 Usar a voz Paula para sintetizar texto:
 ```scheme
-(voice_niettelabs_pt_paula_cg) 
+(voice_pallasspeechsystem_pt_paula_cg) 
 ```
 
 Sintetizar fala a partir um texto:

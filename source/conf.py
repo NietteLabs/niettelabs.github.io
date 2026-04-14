@@ -6,7 +6,7 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'NietteTTS'
+project = 'Fest-TTS'
 copyright = '2024-%Y, Pallas da Silva Guedes'
 author = 'Pallas da Silva Guedes'
 release = '1.0.5-alpha'
@@ -25,7 +25,7 @@ source_suffix = {
 language = 'pt-BR'
 
 html_theme_options = {
-	"repository_url": "https://github.com/NietteLabs/niettelabs.github.io",
+	"repository_url": "https://github.com/PallasSpeechSystem/pallasspeechsystem.github.io",
 	"use_repository_button": True,
 	"announcement": "Essa é uma documentação está em estagio alpha! Sofrerar alterações conforme o tempo.",
 }
@@ -36,5 +36,5 @@ html_theme_options = {
 html_theme = 'sphinxawesome_theme'
 html_static_path = ['_static']
 html_show_sphinx = True
-html_logo = '../imgs/NietteTTS.png'
-html_favicon = '../imgs/NietteTTS.png'
+#html_logo = '../imgs/NietteTTS.png'
+#html_favicon = '../imgs/NietteTTS.png'

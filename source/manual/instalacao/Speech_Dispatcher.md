@@ -1,9 +1,9 @@
-# Usar vozes do NietteTTS com Speech Dispatcher
-Fazer esse processo, possibilitar usar as vozes do NietteTTS não em modo interativo do Festival, usando em aplicativos que usam o Speech Dispatcher como leitor de tela ou PDFs.
+# Usar vozes do Fest-TTS com Speech Dispatcher
+Fazer esse processo, possibilitar usar as vozes do Fest-TTS não em modo interativo do Festival, usando em aplicativos que usam o Speech Dispatcher como leitor de tela ou PDFs.
 
 ```{admonition} Aviso
 :class: caution
-O funcionamento com Speech Dispatcher está em fase experimental, tenha cuidado ao usar as vozes do NietteTTS com Speech Dispatcher.
+O funcionamento com Speech Dispatcher está em fase experimental, tenha cuidado ao usar as vozes do Fest-TTS com Speech Dispatcher.
 ```
 
 **Fontes:** 
@@ -14,7 +14,7 @@ O funcionamento com Speech Dispatcher está em fase experimental, tenha cuidado 
 
 ## Download da voz e do G2P
 
-Siga esse tutorial de instalação das vozes do NietteTTS em: [Instalação](https://niettelabs.github.io/manual/instalacao/instalacao.html)
+Siga esse tutorial de instalação das vozes do Fest-TTS em: [Instalação](https://pallasspeechsystem.github.io/manual/instalacao/instalacao.html)
 
 ### Instale o módulo do Speech Dispatch Festival
 
@@ -25,7 +25,7 @@ sudo apt-get install speech-dispatcher-festival
 ### Instale a versão modificada do festival-freebsoft-utils
 
 ```bash
-git clone https://github.com/NietteLabs/festival-freebsoft-utils
+git clone https://github.com/PallasSpeechSystem/festival-freebsoft-utils
 cd festival-freebsoft-utils
 sudo cp *.scm /usr/share/festival 
 ```

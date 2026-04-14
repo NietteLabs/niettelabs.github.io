@@ -70,9 +70,9 @@ MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudi
 
 | Voz     | Audio                                                                                                                                     |
 | ------- | ----------------------------------------------------------------------------------------------------------------------------------------- |
-| Ana     | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/ana/livro.wav"></audio>                       |
-| Paula   | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/paula/livro.wav"></audio>                     |
-| Pieroni | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/pieroni/livro.wav"></audio> |
+| Ana     | <audio controls src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/ana/livro.wav"></audio>                       |
+| Paula   | <audio controls src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/paula/livro.wav"></audio>                     |
+| Pieroni | <audio controls src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/pieroni/livro.wav"></audio> |
 
 
 **Texto 2:**
@@ -118,9 +118,9 @@ MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudi
 
 | Voz     | Audio                                                                                                                                    |
 | ------- | ---------------------------------------------------------------------------------------------------------------------------------------- |
-| Ana     | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/ana/musica.wav"></audio>     |
-| Paula   | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/paula/musica.wav"></audio>   |
-| Pieroni | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/pieroni/musica.wav"></audio> |
+| Ana     | <audio controls src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/ana/musica.wav"></audio>     |
+| Paula   | <audio controls src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/paula/musica.wav"></audio>   |
+| Pieroni | <audio controls src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/pieroni/musica.wav"></audio> |
 
 **Texto 3:**
 > Eu sempre penso em ti.<br>
@@ -155,6 +155,6 @@ MCD - Mel Cepstral Distortion (MCD), foi gerado comparado similaridade dos áudi
 
 | Voz     | Audio                                                                                                                                                                              |
 | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Ana     | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/ana/amor_niette_05-11-24.wav"></audio>                                  |
-| Paula   | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/paula/amor_niette_05-11-24.wav"></audio> |
-| Pieroni | <audio controls src="https://github.com/NietteLabs/NietteTTS/raw/refs/heads/main/samples/pt/pieroni/amor_niette_05-11-24.wav"></audio>                             |
+| Ana     | <audio controls src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/ana/amor_niette_05-11-24.wav"></audio>                                  |
+| Paula   | <audio controls src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/paula/amor_niette_05-11-24.wav"></audio> |
+| Pieroni | <audio controls src="https://github.com/PallasSpeechSystem/Fest-TTS/raw/refs/heads/main/samples/pt/pieroni/amor_niette_05-11-24.wav"></audio>                             |
